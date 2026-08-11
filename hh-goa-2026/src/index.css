@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  --radius: 0.25rem;
+  --font-display: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  --font-body: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+
+  --background: #f7f6f0;
+  --foreground: #1c2333;
+
+  --card: #fdfcf7;
+  --card-foreground: #1c2333;
+
+  --ink: #1c2333;
+  --ink-foreground: #f7f6f0;
+  --sun: #f26522;
+  --sea: #48a9a6;
+
+  --muted: #eae8dc;
+  --muted-foreground: #6c757d;
+
+  --border: rgba(28, 35, 51, 0.18);
+  --shadow-hard: 4px 4px 0 0 var(--ink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  line-height: 0.92;
+}
+
+.label-mono {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.card-hard {
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  background-color: var(--card);
+  box-shadow: var(--shadow-hard);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eae8dc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1c2333;
+}
+
+/* Selection color */
+::selection {
+  background: #f26522;
+  color: #f7f6f0;
+}
+
+/* Keyframes for ticker animation */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 25s linear infinite;
+}
