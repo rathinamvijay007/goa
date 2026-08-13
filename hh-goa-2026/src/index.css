@@ -291,3 +291,63 @@ h1, h2, h3, h4, .font-display {
 .glow-magenta {
   box-shadow: 0 0 24px rgba(233, 30, 140, 0.2);
 }
+
+/* Custom APPLY Button with Indian geometric pattern ribbon border */
+.apply-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFE500;
+  color: #064E3B;
+  font-family: 'Times New Roman', 'Playfair Display', Georgia, serif;
+  font-weight: 900;
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  padding: 0.5rem 2.25rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(255, 229, 0, 0.6), 0 0 30px rgba(255, 229, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 2px solid #FFE500;
+  border-right: 2px solid #FFE500;
+  overflow: hidden;
+}
+
+.apply-btn::before,
+.apply-btn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: repeating-linear-gradient(
+    90deg,
+    #E91E63 0px,
+    #E91E63 6px,
+    #4CAF50 6px,
+    #4CAF50 12px,
+    #2196F3 12px,
+    #2196F3 18px,
+    #FFEB3B 18px,
+    #FFEB3B 24px
+  );
+}
+
+.apply-btn::before {
+  top: 0;
+}
+
+.apply-btn::after {
+  bottom: 0;
+}
+
+.apply-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(255, 229, 0, 0.8), 0 0 45px rgba(255, 229, 0, 0.5);
+}
+
+/* Goa Hindi positioning refinement */
+.goa-hindi-overlay {
+  filter: drop-shadow(0px 4px 12px rgba(233, 30, 140, 0.4));
+}

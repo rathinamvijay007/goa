@@ -34,127 +34,89 @@ export default function App() {
 
   return (
     <main className="min-h-screen bg-[#0B5D3B] text-[#FFFFFF] overflow-x-hidden">
-      {/* Decorative SVG elements - white outline style */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        {/* Palm tree left */}
-        <svg className="absolute -left-10 top-10 w-64 h-80 opacity-20" viewBox="0 0 200 300" fill="none" stroke="#FFFFFF" strokeWidth="2">
-          <path d="M100 280 L100 120" />
-          <path d="M100 120 Q60 40 10 60" />
-          <path d="M100 120 Q80 30 30 10" />
-          <path d="M100 120 Q120 30 170 10" />
-          <path d="M100 120 Q140 40 190 60" />
-          <path d="M100 160 Q50 100 10 120" />
-          <path d="M100 160 Q150 100 190 120" />
-        </svg>
-
-        {/* Palm tree right */}
-        <svg className="absolute -right-10 top-20 w-64 h-80 opacity-20" viewBox="0 0 200 300" fill="none" stroke="#FFFFFF" strokeWidth="2">
-          <path d="M100 280 L100 120" />
-          <path d="M100 120 Q60 40 10 60" />
-          <path d="M100 120 Q80 30 30 10" />
-          <path d="M100 120 Q120 30 170 10" />
-          <path d="M100 120 Q140 40 190 60" />
-          <path d="M100 160 Q50 100 10 120" />
-          <path d="M100 160 Q150 100 190 120" />
-        </svg>
-
-        {/* Birds */}
-        <svg className="absolute right-1/4 top-40 w-8 h-4 opacity-30" viewBox="0 0 20 10" fill="none" stroke="#FFFFFF" strokeWidth="1.5">
-          <path d="M0 5 Q5 0 10 5 Q15 0 20 5" />
-        </svg>
-        <svg className="absolute right-1/3 top-48 w-6 h-3 opacity-25" viewBox="0 0 20 10" fill="none" stroke="#FFFFFF" strokeWidth="1.5">
-          <path d="M0 5 Q5 0 10 5 Q15 0 20 5" />
-        </svg>
-      </div>
-
       {/* Navigation Header */}
-      <header className="sticky top-0 z-30 border-b-2 border-[#FFFFFF]/20 bg-[#0B5D3B]/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3">
-          <span className="font-display text-3xl tracking-wide text-[#F5C518]">HH GOA '26</span>
-          <nav className="hidden items-center gap-7 label-mono md:flex">
-            <a href="#generator" className="hover:text-[#F5C518] transition-colors">Pass Studio</a>
-            <a href="#faq" className="hover:text-[#F5C518] transition-colors">FAQs</a>
-          </nav>
-          <a
-            href={APPLY}
-            target="_blank"
-            rel="noreferrer"
-            className="btn btn-yellow"
-          >
-            Apply
+      <header className="sticky top-0 z-30 bg-[#0B5D3B] px-6 md:px-12 py-6">
+        <div className="mx-auto flex max-w-7xl items-center justify-between">
+          {/* 2:47 PM Studio Logo */}
+          <a href="/" className="flex-shrink-0">
+            <img src="/2-47.svg" alt="2:47 PM Studio" className="h-12 md:h-14 w-auto" />
           </a>
+          <div className="flex items-center gap-6 md:gap-10">
+            <a href="#check-hype" className="label-mono text-[#FFFFFF] hover:text-[#F5C518] transition-colors tracking-[0.2em] text-xs font-semibold">
+              CHECK HYPE
+            </a>
+            <a
+              href={APPLY}
+              target="_blank"
+              rel="noreferrer"
+              className="apply-btn"
+            >
+              APPLY
+            </a>
+          </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section id="generator" className="relative overflow-hidden border-b-2 border-[#FFFFFF]/20">
-        {/* Sunset/glow effect */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[600px] h-[600px] rounded-full bg-[#F5C518]/10 blur-3xl" />
-        </div>
+      <section className="relative overflow-hidden bg-[#0B5D3B] flex flex-col justify-between pt-10 md:pt-16 pb-8">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center justify-between flex-1">
+          {/* Main Title Container: Hacker House Image + Goa Hindi overlay */}
+          <div className="relative w-full max-w-[94vw] md:max-w-[88vw] lg:max-w-[82vw] mx-auto my-auto py-8 md:py-12">
+            <h1 className="sr-only">Hacker House Goa</h1>
+            <img
+              src="/hacker-house.png"
+              alt="HACKER HOUSE"
+              className="w-full h-auto select-none block"
+              draggable={false}
+            />
+            {/* Goa Hindi SVG overlaid exactly in the middle between HACKER and HOUSE */}
+            <img
+              src="/goa_hindi.svg"
+              alt="गोवा"
+              className="absolute select-none goa-hindi-overlay pointer-events-none"
+              style={{
+                width: '11%',
+                top: '44%',
+                left: '48.5%',
+                transform: 'translate(-50%, -50%)',
+              }}
+              draggable={false}
+            />
+          </div>
 
-        {/* Beach illustration elements */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {/* Waves at bottom */}
-          <svg className="absolute bottom-0 left-0 w-full h-32 opacity-20" viewBox="0 0 1920 120" fill="none" stroke="#FFFFFF" strokeWidth="2">
-            <path d="M0 80 Q240 40 480 80 Q720 120 960 80 Q1200 40 1440 80 Q1680 120 1920 80" />
-            <path d="M0 95 Q240 55 480 95 Q720 135 960 95 Q1200 55 1440 95 Q1680 135 1920 95" />
-          </svg>
-
-          {/* Beach chair left */}
-          <svg className="absolute bottom-8 left-[15%] w-24 h-24 opacity-30" viewBox="0 0 100 100" fill="none" stroke="#FFFFFF" strokeWidth="2">
-            <path d="M20 80 L40 30 L60 30 L80 80" />
-            <path d="M40 30 L40 50 L80 50 L80 30" />
-            <path d="M30 80 L70 80" />
-          </svg>
-
-          {/* Beach chair right */}
-          <svg className="absolute bottom-8 left-[25%] w-24 h-24 opacity-30" viewBox="0 0 100 100" fill="none" stroke="#FFFFFF" strokeWidth="2">
-            <path d="M20 80 L40 30 L60 30 L80 80" />
-            <path d="M40 30 L40 50 L80 50 L80 30" />
-            <path d="M30 80 L70 80" />
-          </svg>
-
-          {/* Umbrella */}
-          <svg className="absolute bottom-12 left-[18%] w-32 h-32 opacity-30" viewBox="0 0 100 100" fill="none" stroke="#FFFFFF" strokeWidth="2">
-            <path d="M50 90 L50 40" />
-            <path d="M10 40 Q30 10 50 40 Q70 10 90 40" />
-            <path d="M20 40 Q35 20 50 40 Q65 20 80 40" />
-          </svg>
-
-          {/* Scooter */}
-          <svg className="absolute bottom-4 right-[15%] w-28 h-28 opacity-30" viewBox="0 0 100 100" fill="none" stroke="#FFFFFF" strokeWidth="2">
-            <circle cx="25" cy="75" r="12" />
-            <circle cx="75" cy="75" r="12" />
-            <path d="M25 75 L35 45 L55 40 L75 75" />
-            <path d="M35 45 L30 35 L40 30 L55 40" />
-            <path d="M55 40 L65 35 L70 40" />
-          </svg>
-        </div>
-
-        <div className="relative mx-auto max-w-7xl px-5 py-20 md:py-28">
-          <div className="text-center">
-            <h1 className="font-display text-[clamp(4rem,14vw,10rem)] leading-[0.82] text-[#F5C518] drop-shadow-[0_4px_20px_rgba(245,197,24,0.3)]">
-              HACKER HOUSE
-            </h1>
-
-            {/* Goa badge */}
-            <div className="mt-4 inline-flex items-center">
-              <span className="bg-[#E91E8C] text-[#FFFFFF] px-5 py-2 rounded-full font-display text-xl tracking-wide border-2 border-[#FFFFFF]">
-                गोवा
-              </span>
+          {/* Bottom Info Metadata Row */}
+          <div className="w-full max-w-[94vw] md:max-w-[88vw] lg:max-w-[82vw] mx-auto flex items-center justify-between mt-8 md:mt-12 mb-8">
+            <div>
+              <p className="label-mono text-[#F5C518] font-semibold text-xs md:text-sm tracking-[0.2em]">
+                GOA, INDIA  ·  28 – 31 OCT 2026
+              </p>
             </div>
+            <div>
+              <p className="label-mono text-[#F5C518] font-semibold text-xs md:text-sm tracking-[0.2em]">
+                2:47 PM STUDIO
+              </p>
+            </div>
+          </div>
 
-            <p className="mt-4 label-mono text-[#B8D4C8] font-medium">
-              GOA, INDIA · 28–31 OCT 2026
-            </p>
-
-            <p className="mt-6 max-w-xl mx-auto text-sm text-[#B8D4C8] leading-relaxed">
-              Less noise. More signal. A residency for builders who ship.
-            </p>
+          {/* Bottom Center Yellow Vertical Line Divider */}
+          <div className="flex justify-center mt-2">
+            <div className="w-[2px] h-12 md:h-16 bg-[#F5C518]" />
           </div>
         </div>
       </section>
+
+      {/* Full-width Sunset Beach Background Illustration (sun-rise.png) */}
+      <div className="w-full relative overflow-hidden bg-[#0B5D3B]">
+        {/* Soft, seamless gradient transition overlay removing the harsh horizontal color break */}
+        <div className="absolute top-0 left-0 right-0 h-24 md:h-36 bg-gradient-to-b from-[#0B5D3B] via-[#0B5D3B]/70 to-transparent z-10 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-16 md:h-24 bg-gradient-to-t from-[#084A2E] to-transparent z-10 pointer-events-none" />
+        <img
+          src="/sun-rise.png"
+          alt="Sunrise over Goa Beach"
+          className="w-full h-auto block select-none"
+          draggable={false}
+        />
+      </div>
 
       {/* Ticker */}
       <div className="overflow-hidden border-y-2 border-[#FFFFFF]/20 bg-[#084A2E] py-3">
@@ -201,50 +163,6 @@ export default function App() {
         {cardMode === 'individual' ? <BuilderCardGenerator /> : <TeamCardGenerator />}
       </section>
 
-      {/* Stats Signpost Section */}
-      <section className="border-y-2 border-[#FFFFFF]/20 py-16 px-5">
-        <div className="mx-auto max-w-5xl">
-          <div className="flex flex-col items-center gap-6">
-            {/* Signpost pole */}
-            <div className="w-3 bg-[#FFFFFF] rounded-sm self-center" style={{ height: '400px' }} />
-
-            {/* Stats arrows */}
-            <div className="flex flex-col gap-4 w-full max-w-3xl">
-              {/* 6800+ registrations */}
-              <div className="flex items-center gap-4">
-                <div className="signpost signpost-yellow signpost-arrow px-6 py-3 flex items-center gap-3 min-w-[280px]">
-                  <span className="font-display text-3xl text-[#0B5D3B]">6800+</span>
-                  <span className="label-mono text-[#0B5D3B]">REGISTRATIONS<br/>2024</span>
-                </div>
-              </div>
-
-              {/* 390+ hackers */}
-              <div className="flex items-center gap-4 justify-end">
-                <div className="signpost signpost-magenta signpost-arrow-reverse px-6 py-3 flex items-center gap-3 min-w-[280px]">
-                  <span className="font-display text-3xl text-[#FFFFFF]">390+</span>
-                  <span className="label-mono text-[#FFFFFF]">HACKERS</span>
-                </div>
-              </div>
-
-              {/* 100 projects */}
-              <div className="flex items-center gap-4">
-                <div className="signpost signpost-yellow signpost-arrow px-6 py-3 flex items-center gap-3 min-w-[280px]">
-                  <span className="font-display text-3xl text-[#0B5D3B]">100</span>
-                  <span className="label-mono text-[#0B5D3B]">PROJECTS</span>
-                </div>
-              </div>
-
-              {/* $50K+ bounties */}
-              <div className="flex items-center gap-4 justify-end">
-                <div className="signpost signpost-magenta signpost-arrow-reverse px-6 py-3 flex items-center gap-3 min-w-[280px]">
-                  <span className="font-display text-3xl text-[#FFFFFF]">$50K+</span>
-                  <span className="label-mono text-[#FFFFFF]">BOUNTIES<br/>2026</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Manifesto Section */}
       <section className="border-y-2 border-[#FFFFFF]/20 bg-[#084A2E]">
@@ -294,13 +212,22 @@ export default function App() {
       </section>
 
       {/* Footer Section */}
-      <footer className="border-t-2 border-[#FFFFFF]/20 relative overflow-hidden">
+      <footer className="border-t-2 border-[#FFFFFF]/20 relative overflow-hidden bg-[#084A2E]">
+        {/* Footer Trees Background Element (footer-trees.png) */}
+        <div className="absolute inset-0 z-0 opacity-25 pointer-events-none overflow-hidden">
+          <img
+            src="/footer-trees.png"
+            alt="Footer Palm Trees"
+            className="w-full h-full object-cover object-bottom"
+          />
+        </div>
+
         {/* Sunset glow */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
           <div className="w-[400px] h-[400px] rounded-full bg-[#F5C518]/5 blur-3xl translate-y-1/2" />
         </div>
 
-        <div className="relative mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 md:flex-row md:items-center md:justify-between">
+        <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-4 px-5 py-10 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="font-display text-2xl text-[#F5C518]">HH GOA '26</p>
             <p className="label-mono text-[#6B9A85]">Goa, India · 28–31 Oct 2026</p>
