@@ -1,0 +1,4 @@
+{
+  "buildCommand": "cd hh-goa-2026 && npm install && npm run build",
+  "outputDirectory": "hh-goa-2026/dist"
+}

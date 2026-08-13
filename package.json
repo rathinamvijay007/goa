@@ -1,0 +1,11 @@
+{
+  "name": "hacker-house-goa-root",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "cd hh-goa-2026 && npm install && npm run build"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}
